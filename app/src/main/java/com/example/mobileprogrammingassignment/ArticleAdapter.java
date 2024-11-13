@@ -4,10 +4,12 @@ package com.example.mobileprogrammingassignment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.mobileprogrammingassignment.model.Article;
 
 import java.util.List;
@@ -32,10 +34,16 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
         // Get the current article from the list
         Article article = articles.get(position);
 
-        // Set the article title into the TextView
-        holder.titleTextView.setText(article.getTitle()); // Use the article's title here
-        holder.descriptionTextView.setText(article.getDescription()); // Use the article's description here
+        // Set the article texts into TextViews
+        holder.titleTextView.setText(article.getTitle());
+        holder.descriptionTextView.setText(article.getDescription());
         // add image!?
+        Glide.with(holder.thumbnailImageView.getContext())
+                .load(article.getUrlToImage())
+                .centerCrop()
+                .placeholder(android.R.drawable.ic_menu_camera)
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.thumbnailImageView);
 
 //        holder.titleTextView.setText(article.getContent()); //
     }
@@ -50,6 +58,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
         TextView titleTextView;
         TextView descriptionTextView;
         TextView contentTextView;
+        ImageView thumbnailImageView;
 
 
         public ArticleViewHolder(View itemView) {
@@ -57,7 +66,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
             // Bind the views from the item layout
             titleTextView = itemView.findViewById(R.id.articleTitle); // Reference to Title TextView
             descriptionTextView = itemView.findViewById(R.id.articleDescription); // Reference to Description TextView
-            // INSERT REFERENCE TO IMG VIEW HERE?
+            thumbnailImageView = itemView.findViewById(R.id.articleImage);
 
 //            titleTextView = itemView.findViewById(R.id.articleTitle); // Reference to Content TextView
         }

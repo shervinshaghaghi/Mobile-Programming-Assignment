@@ -1,13 +1,13 @@
 package com.example.mobileprogrammingassignment;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,8 +42,16 @@ private static final String API_KEY = "1dd3d066e3d9434aaf9771b7fa4402e5"; // Rep
         setContentView(R.layout.activity_main);
 
         // Initialize RecyclerView
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.articleList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); // Set LayoutManager (vertical list)
+
+        // add dividers between RecyclerView items
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        Drawable articleDivider = ContextCompat.getDrawable(this, R.drawable.article_divider);
+        if (articleDivider != null) {
+            dividerItemDecoration.setDrawable(articleDivider);
+        }
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
         // Initialize Retrofit
         Retrofit retrofit = new Retrofit.Builder()

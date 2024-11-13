@@ -2,7 +2,6 @@ package com.example.mobileprogrammingassignment;
 
 
 import android.view.LayoutInflater;
-import android.view.RoundedCorner;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,9 +10,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.MultiTransformation;
-import com.bumptech.glide.load.Transformation;
-import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.mobileprogrammingassignment.model.Article;
@@ -21,7 +17,7 @@ import com.example.mobileprogrammingassignment.model.Article;
 import java.util.List;
 public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder> {
 
-    private List<Article> articles; // List of articles to be displayed
+    private final List<Article> articles; // List of articles to be displayed
 
     // Constructor to initialize the articles list
     public ArticleAdapter(List<Article> articles) {

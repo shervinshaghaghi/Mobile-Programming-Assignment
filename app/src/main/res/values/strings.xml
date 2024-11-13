@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mobile Programming Assignment</string>
+    <string name="header_title">Articles</string>
 </resources>

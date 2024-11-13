@@ -1,13 +1,13 @@
 package com.example.mobileprogrammingassignment;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +26,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     private static final String BASE_URL = "https://newsapi.org/"; // Base URL for NewsAPI
-    private static final String API_KEY = "1dd3d066e3d9434aaf9771b7fa4402e5"; // Replace with your actual API key
+private static final String API_KEY = "1dd3d066e3d9434aaf9771b7fa4402e5"; // Replace with your actual API key
+
+
+//    private static final String BASE_URL = "https://sanger.dia.fi.upm.es/pmd-task/"; // Base URL for NewsAPI, https://sanger.dia.fi.upm.es/pmd-task/
+//    private static final String API_KEY = "???"; // Replace with your actual API key
 
     private RecyclerView recyclerView; // RecyclerView to display articles
     private ArticleAdapter articleAdapter; // Adapter for RecyclerView
@@ -38,8 +42,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialize RecyclerView
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.articleList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); // Set LayoutManager (vertical list)
+
+        // add dividers between RecyclerView items
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        Drawable articleDivider = ContextCompat.getDrawable(this, R.drawable.article_divider);
+        if (articleDivider != null) {
+            dividerItemDecoration.setDrawable(articleDivider);
+        }
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
         // Initialize Retrofit
         Retrofit retrofit = new Retrofit.Builder()

@@ -4,6 +4,7 @@ public class Article {
     private String title;
     private String description;
     private String urlToImage;
+    private String content;
 
     public String getTitle() {
         return title;
@@ -16,4 +17,6 @@ public class Article {
     public String getUrlToImage() {
         return urlToImage;
     }
+
+    public String getContent() { return content; }
 }

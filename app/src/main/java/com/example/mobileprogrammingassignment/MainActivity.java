@@ -26,7 +26,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     private static final String BASE_URL = "https://newsapi.org/"; // Base URL for NewsAPI
-    private static final String API_KEY = "1dd3d066e3d9434aaf9771b7fa4402e5"; // Replace with your actual API key
+private static final String API_KEY = "1dd3d066e3d9434aaf9771b7fa4402e5"; // Replace with your actual API key
+
+
+//    private static final String BASE_URL = "https://sanger.dia.fi.upm.es/pmd-task/"; // Base URL for NewsAPI, https://sanger.dia.fi.upm.es/pmd-task/
+//    private static final String API_KEY = "???"; // Replace with your actual API key
 
     private RecyclerView recyclerView; // RecyclerView to display articles
     private ArticleAdapter articleAdapter; // Adapter for RecyclerView

@@ -34,6 +34,10 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
 
         // Set the article title into the TextView
         holder.titleTextView.setText(article.getTitle()); // Use the article's title here
+        holder.descriptionTextView.setText(article.getDescription()); // Use the article's description here
+        // add image!?
+
+//        holder.titleTextView.setText(article.getContent()); //
     }
 
     @Override
@@ -44,11 +48,18 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
     // ViewHolder class to hold references to the views for each item
     public static class ArticleViewHolder extends RecyclerView.ViewHolder {
         TextView titleTextView;
+        TextView descriptionTextView;
+        TextView contentTextView;
+
 
         public ArticleViewHolder(View itemView) {
             super(itemView);
             // Bind the views from the item layout
-            titleTextView = itemView.findViewById(R.id.articleTitle); // Reference to TextView
+            titleTextView = itemView.findViewById(R.id.articleTitle); // Reference to Title TextView
+            descriptionTextView = itemView.findViewById(R.id.articleDescription); // Reference to Description TextView
+            // INSERT REFERENCE TO IMG VIEW HERE?
+
+//            titleTextView = itemView.findViewById(R.id.articleTitle); // Reference to Content TextView
         }
     }
 }

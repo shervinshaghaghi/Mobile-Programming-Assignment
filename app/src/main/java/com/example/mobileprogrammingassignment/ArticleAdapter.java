@@ -1,6 +1,7 @@
 package com.example.mobileprogrammingassignment;
 
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,12 +45,12 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
         Glide.with(holder.thumbnailImageView.getContext())
                 .load(article.getUrlToImage())
                 .apply(requestOptions.fitCenter())
-                .apply(requestOptions.transform(new RoundedCorners(10)))
+                .apply(requestOptions.transform(new RoundedCorners(15)))
                 .placeholder(android.R.drawable.ic_menu_camera)
                 .error(android.R.drawable.stat_notify_error)
                 .into(holder.thumbnailImageView);
 
-//        holder.titleTextView.setText(article.getContent()); //
+        holder.setArticleDetailsActivity(article);
     }
 
     @Override
@@ -61,7 +62,6 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
     public static class ArticleViewHolder extends RecyclerView.ViewHolder {
         TextView titleTextView;
         TextView descriptionTextView;
-        TextView contentTextView;
         ImageView thumbnailImageView;
 
 
@@ -71,8 +71,19 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
             titleTextView = itemView.findViewById(R.id.articleTitle); // Reference to Title TextView
             descriptionTextView = itemView.findViewById(R.id.articleDescription); // Reference to Description TextView
             thumbnailImageView = itemView.findViewById(R.id.articleImage);
+        }
 
-//            titleTextView = itemView.findViewById(R.id.articleTitle); // Reference to Content TextView
+        private void setArticleDetailsActivity(Article article) {
+            itemView.setOnClickListener(view -> {
+                Intent intent = new Intent(itemView.getContext(), ArticleDetailsActivity.class);
+                intent.putExtra(ArticleDetailsActivity.imageParam, article.getUrlToImage());
+                intent.putExtra(ArticleDetailsActivity.titleParam, article.getTitle());
+                intent.putExtra(ArticleDetailsActivity.urlParam, article.getUrl());
+                intent.putExtra(ArticleDetailsActivity.descriptionParam, article.getDescription());
+                intent.putExtra(ArticleDetailsActivity.bodyParam, article.getContent());
+
+                itemView.getContext().startActivity(intent); // ??? no idea if context is correct
+            });
         }
     }
 }

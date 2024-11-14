@@ -3,12 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    android:background="@android:color/transparent"
+    android:background="@drawable/article_ripple"
+    android:clickable="true"
+    android:focusable="true"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:paddingLeft="8dp"
+    android:paddingTop="10dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="12dp">
 
     <ImageView
         android:id="@+id/articleImage"
@@ -26,15 +29,15 @@
         android:layout_gravity="start"
         android:layout_marginBottom="2dp"
         android:textAlignment="textStart"
-        android:textColor="#f7f7f7"
-        android:textSize="22sp"
+        android:textColor="@color/color_article_title"
+        android:textSize="@dimen/article_title_text_size"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/articleDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#b2b2b2"
-        android:textSize="16sp" /> <!-- Optional margin for spacing -->
+        android:textColor="@color/color_article_description"
+        android:textSize="@dimen/article_description_text_size" /> <!-- Optional margin for spacing -->
 
 </LinearLayout>

@@ -28,11 +28,13 @@ public class ArticleDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_article_details);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.articleDetailsLayout), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        // Set padding for system insets?
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.articleDetailsLayout), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
 
         Intent articleIntent = getIntent();
         String urlToImage = articleIntent.getStringExtra(imageParam);
@@ -65,7 +67,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
         TextView bodyView = findViewById(R.id.articleDetailsBody);
 
         titleView.setText(title);
-        urlView.setText("source: " + url);
+        urlView.setText(url);
         descriptionView.setText(description);
         bodyView.setText(body);
     }

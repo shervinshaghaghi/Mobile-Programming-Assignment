@@ -30,7 +30,7 @@
         android:layout_marginBottom="2dp"
         android:textAlignment="textStart"
         android:textColor="@color/color_article_title"
-        android:textSize="@dimen/article_title_size"
+        android:textSize="@dimen/article_title_text_size"
         android:textStyle="bold" />
 
     <TextView
@@ -38,6 +38,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/color_article_description"
-        android:textSize="@dimen/article_description_size" /> <!-- Optional margin for spacing -->
+        android:textSize="@dimen/article_description_text_size" /> <!-- Optional margin for spacing -->
 
 </LinearLayout>

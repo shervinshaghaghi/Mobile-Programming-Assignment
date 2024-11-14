@@ -49,28 +49,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/color_article_title"
-            android:textSize="@dimen/article_title_size" />
+            android:textSize="@dimen/article_title_text_size" />
 
         <TextView
             android:id="@+id/articleUrl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_article_title"
-            android:textSize="12sp" />
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:autoLink="web"
+            android:textSize="@dimen/article_url_text_size" />
 
         <TextView
             android:id="@+id/articleDetailsDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/color_article_description"
-            android:textSize="@dimen/article_description_size" />
+            android:textSize="@dimen/article_description_text_size" />
 
         <TextView
             android:id="@+id/articleDetailsBody"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_article_description"
-            android:textSize="@dimen/article_description_size" />
+            android:layout_marginTop="8dp"
+            android:textColor="@color/color_article_title"
+            android:textSize="@dimen/article_description_text_size" />
     </LinearLayout>
 
 </LinearLayout>

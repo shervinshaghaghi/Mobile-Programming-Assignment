@@ -5,6 +5,8 @@ public class Article {
     private String description;
     private String urlToImage;
     private String content;
+    private String url;
+    private String author;
 
     public String getTitle() {
         return title;
@@ -19,4 +21,7 @@ public class Article {
     }
 
     public String getContent() { return content; }
+
+    public String getUrl() {return url;}
+    public String getAuthor() {return author;}
 }

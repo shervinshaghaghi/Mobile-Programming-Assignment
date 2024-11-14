@@ -44,7 +44,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
         Glide.with(holder.thumbnailImageView.getContext())
                 .load(article.getUrlToImage())
                 .apply(requestOptions.fitCenter())
-                .apply(requestOptions.transform(new RoundedCorners(10)))
+                .apply(requestOptions.transform(new RoundedCorners(15)))
                 .placeholder(android.R.drawable.ic_menu_camera)
                 .error(android.R.drawable.stat_notify_error)
                 .into(holder.thumbnailImageView);

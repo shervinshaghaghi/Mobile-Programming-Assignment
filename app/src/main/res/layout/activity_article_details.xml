@@ -33,6 +33,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/dark_theme_background"
         android:orientation="vertical"
         android:padding="8dp">
 
@@ -47,24 +48,28 @@
             android:id="@+id/articleDetailsTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/color_article_title"
             android:textSize="@dimen/article_title_size" />
 
         <TextView
             android:id="@+id/articleUrl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/color_article_title"
             android:textSize="12sp" />
 
         <TextView
             android:id="@+id/articleDetailsDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/color_article_description"
             android:textSize="@dimen/article_description_size" />
 
         <TextView
             android:id="@+id/articleDetailsBody"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/color_article_description"
             android:textSize="@dimen/article_description_size" />
     </LinearLayout>
 

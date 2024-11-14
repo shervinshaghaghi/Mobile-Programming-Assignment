@@ -33,7 +33,7 @@
         android:id="@+id/articleList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#121212"
+        android:background="@color/dark_theme_background"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp" />
 
